@@ -1,0 +1,8 @@
+<h1>Garden</h1>
+<h2><%= @garden.name %></h2>
+<p><%= @garden.description %></p>
+
+<%= link_to "Delete #{@garden.name}",
+            garden_path(@garden),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
