@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   resources :gardens
   devise_for :users
   root to: 'pages#home'
-  resources :reviews
+  resources :gardens do
+    resources :reviews
+  end
 end
