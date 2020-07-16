@@ -1,0 +1,9 @@
+<h1>Index#new</h1>
+<ul id="gardens">
+  <% @gardens.each do |garden| %>
+    <li><%= link_to garden.name, garden_path(@garden) %></li>
+  <% end %>
+</ul>
+<%= link_to new_garden_path do %>
+  <i class="fa fa-plus"></i> Add a new garden
+<% end %>
