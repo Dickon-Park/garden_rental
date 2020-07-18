@@ -13,8 +13,10 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="container">
-      <%= yield %>
+    <div id='<%=  "#{controller_name}-#{action_name}-background" %>' class="background">
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

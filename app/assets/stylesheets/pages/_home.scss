@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+#pages-home-background, #registrations-new-background {
+  background-image: url(asset-path('gardenHome.jpg'));
+  background-size: cover;
+}
+
+.background {
+  min-height: calc(100vh - 70px);
+  min-width: 100vw;
+}
