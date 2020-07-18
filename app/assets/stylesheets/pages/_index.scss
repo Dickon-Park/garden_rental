@@ -1,2 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
