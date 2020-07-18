@@ -20,3 +20,4 @@ class IndexController < ApplicationController
     @gardens = Garden.find(params[:id])
 
   end
+end
