@@ -14,7 +14,6 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
-
     if @garden.save
       redirect_to garden_path(@garden), notice: 'Garden was successfully created'
     else
