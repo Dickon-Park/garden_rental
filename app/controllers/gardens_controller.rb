@@ -7,7 +7,7 @@ class GardensController < ApplicationController
 
   def show
   end
-  
+
   def new
     @garden = Garden.new
   end
@@ -19,7 +19,7 @@ class GardensController < ApplicationController
     # no need for app/views/gardens/create.html.erb
     redirect_to garden_path(@garden)
   end
-  
+
   def edit
   end
 
@@ -29,12 +29,12 @@ class GardensController < ApplicationController
     # no need for app/views/restaurants/update.html.erb
     redirect_to garden_path(@garden)
   end
-  
+
   def destroy
+    @garden = garden.find(params[:id])
     @garden.destroy
 
-    # no need for app/views/gardens/destroy.html.erb
-    redirect_to gardens_path
+    redirect_to gardens_path(@garden)
   end
 
   private
