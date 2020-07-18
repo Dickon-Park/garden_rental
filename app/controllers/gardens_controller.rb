@@ -15,7 +15,6 @@ class GardensController < ApplicationController
   def create
     @garden = Garden.new(garden_params)
     @garden.save
-    binding.pry
 
     # no need for app/views/gardens/create.html.erb
     redirect_to garden_path(@garden)
