@@ -14,10 +14,12 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
-    @garden.save
 
-    # no need for app/views/gardens/create.html.erb
-    redirect_to garden_path(@garden)
+    if @garden.save
+      redirect_to garden_path(@garden), notice: 'Garden was successfully created'
+    else
+      render :new
+    end
   end
   
   def edit
