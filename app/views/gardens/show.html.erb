@@ -3,15 +3,12 @@
 <img class="garden1"src="https://source.unsplash.com/collection/578066/300x300"alt="garden">
 <p><%= @garden.description %></p>
 
-<%= link_to "Delete",
-            garden_path(@garden),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-
-<%= link_to edit_garden_path(@garden) do %>
-  <i class="fa fa-plus"></i> Edit
+<% if @garden.user == current_user %>
+  <%= link_to edit_garden_path(@garden) do %>
+    <i class="fa fa-plus"></i> Edit
+  <% end %>
+  <%= link_to "Delete", garden_path(@garden), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
-
 
 <%= link_to gardens_path do %>
   <i class="fa fa-plus"></i> Index
