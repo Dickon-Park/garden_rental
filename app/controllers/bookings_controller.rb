@@ -3,6 +3,8 @@ class BookingsController < ApplicationController
     end
     
     def new
+        @garden = Garden.find(params[:garden_id])
+        @booking = Booking.new
     end
     
     def create
