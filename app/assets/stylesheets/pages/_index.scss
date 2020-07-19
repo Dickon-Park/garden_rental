@@ -1,14 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 100px 100px;
+.container-i {
+  display: flex;
 }
 
-.banner h1 {
-  margin: 0;
+.title {
+  background-size: cover;
+  height: 150px;
+  margin: 15px 10px;
+  align-items: center;
+}
+
+.h2 {
+  color: white;
+}
+
+.h1 {
+  display: center;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
@@ -16,22 +25,26 @@
   padding: 50px 50px
 }
 
-li {
-  padding: 20px;
-  font-weight: bold;
-}
-
-.card-garden {
+.cards-i {
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 8px;
-  display: grid;
   width: 500px;
   padding: 16px;
 }
-.card-info {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  background-color: white;
-  padding: 16px;
-  border: 2px;
-  border-color: grey;
+
+
+.card-i {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  margin: 15px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 25px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
