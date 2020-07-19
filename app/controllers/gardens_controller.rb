@@ -14,7 +14,6 @@ class GardensController < ApplicationController
 
   def create
     @garden = Garden.new(garden_params)
-
     if @garden.save
       redirect_to garden_path(@garden), notice: 'Garden was successfully created'
     else
@@ -33,7 +32,6 @@ class GardensController < ApplicationController
   end
 
   def destroy
-    @garden = garden.find(params[:id])
     @garden.destroy
 
     redirect_to gardens_path(@garden)
