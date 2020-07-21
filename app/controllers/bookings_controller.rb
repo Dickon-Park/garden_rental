@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     def new
         @garden = Garden.find(params[:garden_id])
         @booking = Booking.new
+        @user = @garden.user
     end
     
     def create
