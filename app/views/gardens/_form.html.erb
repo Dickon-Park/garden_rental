@@ -1,6 +1,8 @@
+
 <div class="gardens-form">
   <%= simple_form_for(garden) do |f| %>
     <%= f.input :name %>
+    <%= f.input :address %>
     <%= f.input :street %>
     <%= f.input :number %>
     <%= f.input :zipcode %>
@@ -11,3 +13,4 @@
     <%= f.submit %>
   <% end %>
 </div>
+

@@ -2,7 +2,15 @@ class GardensController < ApplicationController
     before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gardens = Garden.all
+    @gardens = Garden.geocoded
+
+    @markers = @gardens.map do |garden| 
+      {
+        lat: garden.latitude,
+        lng: garden.longitude,
+        infowindow: render_to_string(partial: "info_window", locals: { garden: garden })
+      }
+    end
   end
 
   def show
@@ -40,7 +48,9 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :description, :price, :capacity, :city, :street, :number, :zipcode, photos: []).merge(user: current_user)
+
+   params.require(:garden).permit(:name, :description, :address, :price, :capacity, :city, :street, :number, :zipcode, photos: []).merge(user: current_user)
+
   end
 
   def set_garden

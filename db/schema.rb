@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_07_21_174922) do
 
   # These are extensions that must be enabled in order to support this database
@@ -52,6 +53,9 @@ ActiveRecord::Schema.define(version: 2020_07_21_174922) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.decimal "price"
     t.integer "capacity"
     t.binary "image"
@@ -60,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_07_21_174922) do
     t.string "zipcode"
     t.string "street"
     t.string "number"
+
     t.index ["user_id"], name: "index_gardens_on_user_id"
   end
 
