@@ -1,10 +1,16 @@
 <div class="container">
   <div class="card-ss">
-    <img src="https://source.unsplash.com/collection/578066/300x300"alt="garden">
+    <%= cl_image_tag @garden.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-s">
-    <h2><%= @garden.name %></h2>
-    
-    <p><%= @garden.description %></p>
+      <h2><%= @garden.name %></h2>
+      <p><%= @garden.capacity %>
+      <% if @garden.capacity == 1 %>
+        <%= "person" %>
+      <% else %>
+        <%= "people" %>
+      <% end %></p>
+      <p><%= @garden.price %> EUR</p>
+      <p><%= @garden.description %></p>
     </div>
   </div>
 

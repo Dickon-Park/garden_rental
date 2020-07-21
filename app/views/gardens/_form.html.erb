@@ -1,6 +1,10 @@
-<%= simple_form_for(garden) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="gardens-form">
+  <%= simple_form_for(garden) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :capacity %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

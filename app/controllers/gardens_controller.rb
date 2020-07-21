@@ -40,7 +40,7 @@ class GardensController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :description).merge(user: current_user)
+    params.require(:garden).permit(:name, :description, :photo, :price, :capacity).merge(user: current_user)
   end
 
   def set_garden
