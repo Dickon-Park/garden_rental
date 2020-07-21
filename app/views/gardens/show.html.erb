@@ -3,6 +3,7 @@
     <%= cl_image_tag @garden.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-s">
       <h2><%= @garden.name %></h2>
+      <p><%= @garden.number %>, <%= @garden.street %> - <%= @garden.zipcode %></p>
       <p><%= @garden.capacity %>
       <% if @garden.capacity == 1 %>
         <%= "person" %>
