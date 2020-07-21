@@ -1,1 +1,4 @@
 <%= render "form", garden: @garden %>
+
+<p><%= link_to "Cancel", garden_path(@garden) %></p>
+<p><%= link_to "Back to gardens", gardens_path %></p>
