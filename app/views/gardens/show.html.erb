@@ -1,7 +1,9 @@
 <h1>Garden</h1>
 <h2><%= @garden.name %></h2>
 <img class="garden1"src="https://source.unsplash.com/collection/578066/300x300"alt="garden">
+<p><%= @garden.capacity %> people</p>
 <p><%= @garden.description %></p>
+<p><%= @garden.price %> EUR</p>
 
 <% if @garden.user == current_user %>
   <%= link_to edit_garden_path(@garden) do %>
