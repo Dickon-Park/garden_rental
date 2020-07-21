@@ -1,8 +1,10 @@
 <div class="container">
   <div class="card-ss">
-    <%= cl_image_tag @garden.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-s">
       <h2><%= @garden.name %></h2>
+      <% @garden.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <p><%= @garden.number %>, <%= @garden.street %> - <%= @garden.zipcode %></p>
       <p><%= @garden.capacity %>
       <% if @garden.capacity == 1 %>

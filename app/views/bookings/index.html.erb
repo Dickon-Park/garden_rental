@@ -1,0 +1,13 @@
+<div class="container-i">
+  <div class="cards-i">
+    <div class="title">
+    <h1><strong>Your bookings<strong></h1>
+    </div>
+    <% @bookings.each do |booking| %>
+      <div class="card-i">
+       <h2><%= link_to booking.garden.name, booking_path(booking) %></h2>
+       <p><%= booking.garden.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
