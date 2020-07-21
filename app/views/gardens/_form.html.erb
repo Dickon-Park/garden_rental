@@ -1,6 +1,7 @@
 <%= simple_form_for(garden) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :address %>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
