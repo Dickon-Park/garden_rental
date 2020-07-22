@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-    before_action :set_garden, only: [:show, :edit, :update, :destroy]
+  before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
   def index
     @gardens = Garden.geocoded
