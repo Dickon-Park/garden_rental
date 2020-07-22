@@ -10,12 +10,14 @@ class BookingsController < ApplicationController
     end
     
     def create
-        @booking = Booking.new(booking_params)
-        if @booking.save
-          redirect_to booking_path(@booking), notice: 'Your garden was booked succesfully'
-        else
-          render :new
-        end
+      @garden = Garden.find(params[:garden_id])
+      @booking = Booking.new(booking_params)
+      if @booking.save
+        @booking.status = 'Booked'
+        redirect_to booking_path(@booking), notice: 'Your garden was booked succesfully'
+      else
+        render :new
+      end
     end
     
     def edit
@@ -27,6 +29,12 @@ class BookingsController < ApplicationController
     def destroy 
       @booking.destroy
 
-      redirect_to bookings_path
+      redirect_to garden_bookings_path
+    end
+
+    private
+
+    def booking_params
+      params.require(:booking).permit(:content)
     end
 end

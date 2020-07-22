@@ -14,6 +14,7 @@
       <% end %></p>
       <p><%= @garden.price %> EUR</p>
       <p><%= @garden.description %></p>
+      <%= link_to new_garden_booking_path(:garden_id => @garden.id), class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o"></i> Book This Garden<% end %>
     </div>
   </div>
 
