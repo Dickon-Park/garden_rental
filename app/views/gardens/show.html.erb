@@ -1,18 +1,23 @@
 <div class="container">
-  <div class="card-ss">
+  <div class="col-12">
     <div class="card-s">
       <h2><%= @garden.name %></h2>
       <% @garden.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <p><%= @garden.address %></p>
-      <p><%= @garden.city %></p>
+      <p><%= @garden.address %>, <%= @garden.city %></p>
+      <p></p>
       <span><%= @garden.capacity %> <i class="fas fa-user"></i></span> <span> <%= @garden.price %> EUR</span>
       <p></p>
       <p><%= @garden.description %></p>
-      <%= link_to new_garden_booking_path(:garden_id => @garden.id), class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o"></i> Book This Garden<% end %>
+      
     </div>
-  </div>
+    <div class="col-6">
+      <div class="garden-show-card">
+        <h5>Book this Garden!</h5>
+        <%= link_to new_garden_booking_path(garden_id: @garden.id), class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o"></i> Book This Garden<% end %>
+      </div>
+    </div>
 
 <% if @garden.user == current_user %>
   <%= link_to edit_garden_path(@garden) do %>

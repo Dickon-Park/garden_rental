@@ -49,7 +49,7 @@ class GardensController < ApplicationController
 
   def garden_params
 
-   params.require(:garden).permit(:name, :description, :address, :price, :capacity, photos: []).merge(user: current_user)
+   params.require(:garden).permit(:name, :description, :address, :city, :price, :capacity, photos: []).merge(user: current_user)
 
   end
 
