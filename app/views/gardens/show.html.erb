@@ -1,33 +1,63 @@
-<div class="container">
-  <div class="col-12">
-    <div class="card-s">
-      <h2><%= @garden.name %></h2>
+<div class="image">
+  <div class="row">
+    <div class="col-12">
       <% @garden.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <p><%= @garden.address %>, <%= @garden.city %></p>
-      <p></p>
-      <span><%= @garden.capacity %> <i class="fas fa-user"></i></span> <span> <%= @garden.price %> EUR</span>
-      <p></p>
-      <p><%= @garden.description %></p>
-      
     </div>
-    <div class="col-6">
-      <div class="garden-show-card">
-        <h5>Book this Garden!</h5>
-        <%= link_to new_garden_booking_path(garden_id: @garden.id), class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o"></i> Book This Garden<% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card-ss m-1 p-3 bg-white">
+        <h1><%= @garden.name %></h1>
+        <p class="flat-show-address"><%= @garden.address %>, <%= @garden.city %></p>
+      </div>
+      <div class="flat-show-card m-1 p-3 bg-white">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @garden.description %></p>
+        
+        <div id="map"
+     style="width: 40%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+        
       </div>
     </div>
 
-<% if @garden.user == current_user %>
-  <%= link_to edit_garden_path(@garden) do %>
-    <i class="fa fa-plus"></i> Edit
-  <% end %>
-  <%= link_to "Delete", garden_path(@garden), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+    <div class="col-3">
+      <div class="flat-show-card p-3 m-1 bg-white text-center">
+        <h5>Book this place!</h5>
+        <%= link_to new_garden_booking_path(garden_id: @garden.id), class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o"></i> Book This Garden<% end %>
+      </div>
 
-<%= link_to gardens_path do %>
-  <i class="fa fa-plus"></i> Index
-<% end %>
-</div>
+      <div class="flat-show-card p-3 m-1 bg-white text-center">
+        <h5>Details</h5>
+        <div class="flex">
+          <div class="flex text-center">
+            <i class="fas fa-user"><%= @garden.capacity %></i> <i class="fas fa-euro-sign"> <%= @garden.price %></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="flat-show-card p-2 m-1 bg-white text-center">
+        <h5>User area</h5>
+
+          <div class="flex">
+            <% if @garden.user == current_user %>
+              <%= link_to edit_garden_path(@garden), class: "btn btn-light" do %>
+                Edit
+              <% end %>
+              <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
+              <%= link_to gardens_path, class: "btn btn-light" do %>
+                <span>Index</span>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
