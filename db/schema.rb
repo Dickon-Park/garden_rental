@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_201823) do
+ActiveRecord::Schema.define(version: 2020_07_23_180505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_07_21_201823) do
     t.string "status"
     t.bigint "user_id"
     t.bigint "garden_id"
+    t.date "date"
     t.index ["garden_id"], name: "index_bookings_on_garden_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -58,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_07_21_201823) do
     t.decimal "price"
     t.integer "capacity"
     t.binary "image"
+    t.string "city"
+    t.string "zipcode"
     t.index ["user_id"], name: "index_gardens_on_user_id"
   end
 

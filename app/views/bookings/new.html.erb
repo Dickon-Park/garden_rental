@@ -1,3 +1,4 @@
 <%= simple_form_for [ @garden, @booking ] do |f| %>
+  <%= f.input :date, as: :date, html5: true %>
   <%= f.submit "Book this garden", class: "btn btn-primary" %>
 <% end %>

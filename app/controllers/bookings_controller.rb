@@ -13,13 +13,15 @@ class BookingsController < ApplicationController
       @garden = Garden.find(params[:garden_id])
       @booking = Booking.new(booking_params)
       if @booking.save
-        @booking.status = 'Booked'
-        redirect_to booking_path(@booking), notice: 'Your garden was booked succesfully'
+        redirect_to garden_booking_path(@garden, @booking), notice: 'Your garden was booked succesfully'
       else
         render :new
       end
     end
     
+    def show
+    end
+
     def edit
     end
 
@@ -35,6 +37,6 @@ class BookingsController < ApplicationController
     private
 
     def booking_params
-      params.require(:booking).permit(:content)
+      params.require(:booking).permit(:date).merge(user: current_user, garden: @garden, status: 'Booked')
     end
 end
