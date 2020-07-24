@@ -1,4 +1,5 @@
 class GardensController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_garden, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -49,7 +50,7 @@ class GardensController < ApplicationController
 
   def garden_params
 
-   params.require(:garden).permit(:name, :description, :address, :city, :price, :capacity, photos: []).merge(user: current_user)
+   params.require(:garden).permit(:name, :description, :address, :city, :zipcode, :price, :capacity, photos: []).merge(user: current_user)
 
   end
 
