@@ -5,5 +5,5 @@ class Garden < ApplicationRecord
     belongs_to :user
     geocoded_by :address
     after_validation :geocode, if: :will_save_change_to_address?
-    validates :name, :description, :price, :capacity, :city, presence: true
+    validates :name, :description, :price, :capacity, :city, :zipcode, presence: true
 end

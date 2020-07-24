@@ -19,11 +19,6 @@
         <h3>A bit more about this flat...</h3>
         <p><%= @garden.description %></p>
         
-        <div id="map"
-     style="width: 40%; height: 300px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
         
       </div>
     </div>
@@ -53,7 +48,7 @@
               <% end %>
               <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
               <%= link_to gardens_path, class: "btn btn-light" do %>
-                <span>Index</span>
+                <span>List</span>
               <% end %>
           </div>
         </div>

@@ -1,14 +1,14 @@
-
-
-  <div class="col-md-6">
-    <h1>Welcome to Garden Rental</h1>
-    <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="<%= params[:query] %>">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+<div class="col-md-6">
+  <h1>Welcome to Garden Rental</h1>
+      <%= form_tag gardens_path, class: "form-inline my-2 my-lg-0", method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a garden"%>
+        <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
   <div class="col-lg-12">
-  <h2>Find your own garden for the day!</h2>
-
+    <h2>Find your own garden for the day!</h2>
   </div>
-  </div>
+</div>
 
