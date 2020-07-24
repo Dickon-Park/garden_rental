@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
 
 .container-i {
   display: flex;
@@ -11,19 +13,6 @@
   height: 50px;
   margin: 15px 10px;
   align-items: center;
-}
-
-.h2 {
-  color: white;
-}
-
-.h1 {
-  display: center;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-  padding: 50px 50px
 }
 
 .cards-i {
