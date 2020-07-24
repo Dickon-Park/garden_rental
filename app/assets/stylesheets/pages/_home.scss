@@ -1,10 +1,30 @@
 // Specific CSS for your home-page
 #pages-home-background, #registrations-new-background {
-  background-image: url(asset-path('gardenHome.jpg'));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)), url(asset-path('gardenHome.jpg'));
   background-size: cover;
+  background-position: center;
 }
 
 .background {
-  min-height: calc(100vh - 70px);
-  min-width: 100vw;
+  min-height: calc(100vh - 75px);
+  min-width: 90vw;
+}
+
+.header {
+  text-align: center;
+  justify-content: center;
+  padding: 50px;
+  color: $white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 50px;
+}
+
+.content {
+  margin: 20px 0 50px 0;
+  font-size: 20px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
 }
