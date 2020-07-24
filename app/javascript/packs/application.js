@@ -25,12 +25,12 @@ require("channels")
 // External imports
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 import { initMapbox } from '../plugins/init_mapbox';
-
-initMapbox();
 
  document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
 });

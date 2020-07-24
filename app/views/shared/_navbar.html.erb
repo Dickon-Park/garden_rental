@@ -7,20 +7,29 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div class="search-bar" id="navbarSearchContent">
+    <div class="col-md-12">
+      <%= form_tag gardens_path, class: "form-inline my-2 my-lg-0", method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a garden" %>
+        <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", "/", class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Create a garden", new_garden_path, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Gardens page", gardens_path, class: "dropdown-item" %>
-            <%= link_to "Edit Account", '#', class: "dropdown-item" %>
+            <%= link_to "Create new garden", new_garden_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
