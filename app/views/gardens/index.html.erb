@@ -11,9 +11,25 @@
   </div>
   <div class="cards-i">
     <% @gardens.each do |garden| %>
-      <div class="card-i" style="background-image: url(https://source.unsplash.com/collection/560886)">
-       <h2><%= link_to garden.name, garden_path(garden) %></h2>
-       <p><%= garden.description %></p>
+      <div class="col-12">
+        <div class="card-i"> 
+          <div class="garden-card-image" style="background-image: url(https://source.unsplash.com/collection/560886)">
+            <div class="card-infos">
+              <div class="garden-card-title">
+                <h2><%= link_to garden.name, garden_path(garden) %></h2>
+              </div>
+              <p><%= garden.address %>, <%= garden.zipcode %>, <%= garden.city %></p>
+              <div class="flex">
+                <div class="flex">
+                  <i class="fas fa-user"><%= garden.capacity %></i>
+                </div>
+                <div class="flex ml-3">
+                  <i class="fas fa-euro-sign"> <%= garden.price %></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
@@ -28,3 +44,4 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+ 
