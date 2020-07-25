@@ -1,18 +1,19 @@
-<div class="col-12">
-  <div class="header">
-    <h1>AirGardens</h1>
-    <div class="content">
-      <p>Whether you’re looking for a tree to relax below or an entire garden for the whole family, a warm welcome awaits</p>
-    </div>
-    <div class="search-form">
-      <%= form_tag gardens_path, class: "form-inline my-2 my-lg-2 ", method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a garden"%>
-        <%= submit_tag "Search", class: "btn btn-success my-2 my-sm-0" %>
-      <% end %>
+<div class="container-i">
+  <div class="col-12">
+    <div class="header">
+      <h1>AirGardens</h1>
+      <div class="content">
+        <p>Whether you’re looking for a tree to relax below or an entire garden for the whole family, a warm welcome awaits</p>
+      </div>
+      <div class="search-form">
+        <%= form_tag gardens_path, class: "form-inline my-2 my-lg-2 ", method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a garden"%>
+          <%= submit_tag "Search", class: "btn btn-success my-2 my-sm-0" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-

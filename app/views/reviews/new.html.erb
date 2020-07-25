@@ -1,6 +1,8 @@
-<h2>Review me here</h2>
+<div class="container-i">
+  <h2>Review me here</h2>
 
-<%= simple_form_for [ @garden, @review ] do |f| %>
-  <%= f.input :description %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for [ @garden, @review ] do |f| %>
+    <%= f.input :description %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+</div>
