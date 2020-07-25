@@ -1,0 +1,89 @@
+.cards-i {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+  
+  .card-i {
+    width: 100%;
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  }
+  .garden-card-image {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+  }
+  .card-infos {
+    padding: 24px;
+    background-color: #F8F9FA;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  .flex-align {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .garden-card-title > a {
+    color: #1EDD88;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 20px;
+  }
+  
+  .garden-card-title > a:hover {
+    text-decoration: none;
+    color: #085834;
+  }
+
+  .garden-btn {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+    justify-content: center;
+
+  }
+  
+  // Smallest device
+  @media (min-width: 100px) and (max-width: 575px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
