@@ -35,6 +35,18 @@
               <p><i class="fas fa-user"></i><%= @garden.capacity %></p>
               <p><%= @garden.price %><i class="fas fa-euro-sign"></i></p>
             </div>
+          <div class="flex">
+            <% if @garden.user == current_user %>
+              <%= link_to edit_garden_path(@garden), class: "btn btn-light" do %>
+                Edit
+              <% end %>
+              <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
+              <%= link_to gardens_path, class: "btn btn-light" do %>
+              <%= link_to 'reviews', garden_review_path(@garden, @review) %> 
+              <span>List</span>
+              <% end %>
+          </div>
+          
         </div>
         
         <% if user_signed_in? %>
