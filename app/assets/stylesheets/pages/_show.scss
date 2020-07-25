@@ -1,6 +1,5 @@
 .card-ss {
   overflow: hidden;
-  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
@@ -40,4 +39,8 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
+}
+
+.reviews {
+  margin-top: 10px;
 }

@@ -12,14 +12,14 @@
             <p><%= @garden.address %>, <%= @garden.city %></p>
             <h1><%= @garden.name %></h1>
         </div>
-        <div class="garden-show-card m-1 p-3 bg-white">
+        <div class="card-ss garden-show-card m-1 p-3 bg-white">
           <h3>A bit more about this garden...</h3>
           <p><%= @garden.description %></p>
         </div>
       </div>
 
       <div class="col-3">
-        <div class="garden-show-card p-2 m-1 bg-white text-center">
+        <div class="card-ss garden-show-card p-2 m-1 bg-white text-center">
           <h5>Book this garden</h5>
           <div class="book-btn">
             <%= simple_form_for [ @garden, @booking ] do |f| %>
@@ -29,16 +29,30 @@
           </div>
         </div>
 
-        <div class="garden-show-card p-3 m-1 bg-white text-center">
+        <div class="card-ss garden-show-card p-3 m-1 bg-white text-center">
           <h5>Details</h5>
             <div class="details-card">
               <p><i class="fas fa-user"></i><%= @garden.capacity %></p>
               <p><%= @garden.price %><i class="fas fa-euro-sign"></i></p>
             </div>
+          <div class="flex">
+            <% if @garden.user == current_user %>
+              <%= link_to edit_garden_path(@garden), class: "btn btn-light" do %>
+                Edit
+              <% end %>
+              <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
+              <%= link_to gardens_path, class: "btn btn-light" do %>
+                List
+              <% end %>
+              </div>
+              <div class="reviews">
+                <%= link_to new_garden_review_path(@garden), class: "btn btn-light" do %>
+                  Reviews
+                <% end %>
+           </div>
         </div>
-        
         <% if user_signed_in? %>
-          <div class="flat-show-card p-2 m-1 bg-white text-center">
+          <div class="card-ss garden-show-card p-2 m-1 bg-white text-center">
               <h5>User area</h5>
                 <div class="user-card">
                 <% if @garden.user == current_user %>
