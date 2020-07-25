@@ -44,13 +44,7 @@
               <%= link_to gardens_path, class: "btn btn-light" do %>
                 List
               <% end %>
-              </div>
-              <div class="reviews">
-                <%= link_to new_garden_review_path(@garden), class: "btn btn-light" do %>
-                  Reviews
-                <% end %>
-           </div>
-
+          </div>
         </div>
         <% if user_signed_in? %>
           <div class="card-ss garden-show-card p-2 m-1 bg-white text-center">
@@ -66,6 +60,11 @@
                   <% end %>
                 </div>
           </div>
+          <div class="card-ss garden-show-card p-2 m-1 bg-white text-center">
+          <%= link_to new_garden_review_path(@garden), class: "btn btn-light" do %>
+                Reviews
+              <% end %>
+              </div>
         <% end %>
       </div>
     </div>
