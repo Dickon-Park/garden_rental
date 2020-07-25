@@ -1,4 +1,4 @@
-<div class="image">
+<div class="garden-img">
   <div class="row">
     <div class="col-12">
       <% @garden.photos.each do |photo| %>
@@ -12,50 +12,49 @@
   <div class="row">
     <div class="col-8">
       <div class="card-ss m-1 p-3 bg-white">
-        <h1><%= @garden.name %></h1>
-        <p class="flat-show-address"><%= @garden.address %>, <%= @garden.city %></p>
+          <p><%= @garden.address %>, <%= @garden.city %></p>
+          <h1><%= @garden.name %></h1>
       </div>
-      <div class="flat-show-card m-1 p-3 bg-white">
+      <div class="garden-show-card m-1 p-3 bg-white">
         <h3>A bit more about this garden...</h3>
         <p><%= @garden.description %></p>
-        
       </div>
     </div>
 
     <div class="col-3">
-      <div class="flat-show-card p-3 m-1 bg-white text-center">
-        <h5>Book this place!</h5>
-        <%= simple_form_for [ @garden, @booking ] do |f| %>
-          <%= f.input :date, as: :date, html5: true %>
-          <%= f.submit "Book this garden", class: "btn btn-primary" %>
-        <% end %>
-
+      <div class="garden-show-card p-2 m-1 bg-white text-center">
+        <h5>Book this garden</h5>
+        <div class="book-btn">
+          <%= simple_form_for [ @garden, @booking ] do |f| %>
+            <%= f.input :date, as: :date, html5: true %>
+            <%= f.submit "Book", class: "btn btn-success" %>
+          <% end %>
+        </div>
       </div>
 
-      <div class="flat-show-card p-3 m-1 bg-white text-center">
+      <div class="garden-show-card p-3 m-1 bg-white text-center">
         <h5>Details</h5>
-        <div class="flex">
-          <div class="flex text-center">
-            <i class="fas fa-user"><%= @garden.capacity %></i> <i class="fas fa-euro-sign"> <%= @garden.price %></i>
+          <div class="details-card">
+            <p><i class="fas fa-user"></i><%= @garden.capacity %></p>
+            <p><%= @garden.price %><i class="fas fa-euro-sign"></i></p>
           </div>
-        </div>
       </div>
-
-      <div class="flat-show-card p-2 m-1 bg-white text-center">
-        <h5>User area</h5>
-
-          <div class="flex">
-            <% if @garden.user == current_user %>
-              <%= link_to edit_garden_path(@garden), class: "btn btn-light" do %>
-                Edit
-              <% end %>
-              <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
-              <%= link_to gardens_path, class: "btn btn-light" do %>
-                <span>List</span>
-              <% end %>
-          </div>
-        </div>
-      </div>
+      
+      <% if user_signed_in? %>
+        <div class="flat-show-card p-2 m-1 bg-white text-center">
+            <h5>User area</h5>
+              <div class="user-card">
+               <% if @garden.user == current_user %>
+                  <%= link_to edit_garden_path(@garden), class: "btn btn-light" do %>
+                    Edit
+                  <% end %>
+                  <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
+                  <%= link_to gardens_path, class: "btn btn-light" do %>
+                    List
+                <% end %>
+              </div>
+         </div>
+      <% end %>
     </div>
   </div>
 </div>
