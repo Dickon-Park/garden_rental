@@ -25,6 +25,8 @@ class GardensController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    @user = @garden.user
   end
 
   def new

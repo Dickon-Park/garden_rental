@@ -25,7 +25,11 @@
     <div class="col-3">
       <div class="flat-show-card p-3 m-1 bg-white text-center">
         <h5>Book this place!</h5>
-        <%= link_to new_garden_booking_path(garden_id: @garden.id), class: "btn btn-primary" do %><i class="fa fa-calendar-plus-o"></i> Book This Garden<% end %>
+        <%= simple_form_for [ @garden, @booking ] do |f| %>
+          <%= f.input :date, as: :date, html5: true %>
+          <%= f.submit "Book this garden", class: "btn btn-primary" %>
+        <% end %>
+
       </div>
 
       <div class="flat-show-card p-3 m-1 bg-white text-center">
