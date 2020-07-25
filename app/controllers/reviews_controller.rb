@@ -9,14 +9,17 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
     @garden = Garden.find(params[:garden_id])
+    @review = Review.new(review_params)
     if @review.save
-      redirect_to review_path(@review)
+      redirect_to  garden_path(@garden)
     else
-      render "new"
+      render :new
     end
   end
 
-  
+  def review_params
+    params.require(:review).permit(:description)
+  end
+
 end

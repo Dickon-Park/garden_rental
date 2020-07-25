@@ -51,7 +51,8 @@
               <% end %>
               <%= link_to "Delete", garden_path(@garden), class: "btn btn-light", method: :delete, data: { confirm: "Are you sure?" } %><% end %>
               <%= link_to gardens_path, class: "btn btn-light" do %>
-                <span>List</span>
+              <%= link_to 'reviews', new_garden_review_path(@garden) %> 
+              <span>List</span>
               <% end %>
           </div>
         </div>
