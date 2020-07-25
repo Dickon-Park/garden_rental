@@ -6,10 +6,12 @@
 }
 
 .garden-img {
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  grid-gap: 16px;
+  grid-gap: 5px;
+  background-position: center;
+  background-size: cover;
 }
 
 .card-ss h2 {
@@ -41,6 +43,9 @@
   padding: 10px;
 }
 
+.details-card p {
+  font-size: 16px;
+}
 .reviews {
   margin-top: 10px;
 }

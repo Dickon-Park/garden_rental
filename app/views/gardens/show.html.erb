@@ -1,13 +1,13 @@
-<div class="container-i">  
-  <div class="garden-img">
+<div class="container-i">
+  <div class="garden-img m-1 p-3">
     <% @garden.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
     <% end %>
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-8">
+      <div class="col-9">
         <div class="card-ss m-1 p-3 bg-white">
             <p><%= @garden.address %>, <%= @garden.city %></p>
             <h1><%= @garden.name %></h1>
